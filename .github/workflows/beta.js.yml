@@ -1,10 +1,10 @@
-name: Production CI/CD
+name: Beta CI/CD
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "beta" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "beta" ]
 
 jobs:
   build:
@@ -31,4 +31,4 @@ jobs:
       run: yarn build
 
     - name: Move Build Folder (/dist) to (/www)
-      run: \cp -r /root/actions-runner/_work/personal-website/personal-website/dist/* /var/www/personal-website
+      run: \cp -r /root/actions-runner/_work/personal-website/personal-website/dist/* /var/www/personal-website-beta
