@@ -3,9 +3,12 @@ name: Beta CI/CD
 on:
   pull_request:
     branches: [ "beta" ]
+    types:
+      - closed
 
 jobs:
-  build:
+  deployment:
+    if: github.event.pull_request.merged == true
     runs-on: self-hosted
 
     strategy:
